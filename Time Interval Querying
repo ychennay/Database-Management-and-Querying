@@ -1,0 +1,5 @@
+# a simple way of querying for entries within the past week on MySQL. I use this in my academic internship to pull recurring reports.
+
+SELECT db1.primary_key db2.primary_key
+FROM table1 db1 join table2 db2 on db2.foreign_key = db1.primary_key
+WHERE db2.other_parameters... AND db2.date_column between date_sub(now(),INTERVAL 1 WEEK) and now()
