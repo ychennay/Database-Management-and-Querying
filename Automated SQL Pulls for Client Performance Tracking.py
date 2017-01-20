@@ -1,11 +1,11 @@
 #create the dataframe to store the output data in
-orders_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
-proceeds_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
-pickups_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
-unique_customers_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
-cancelled_orders_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
-cancelled_proceeds_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
-cancelled_customers_dataframe = pd.DataFrame(index=df['CN Location ID'], columns=salesforce.columns[8:])
+orders_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
+proceeds_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
+pickups_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
+unique_customers_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
+cancelled_orders_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
+cancelled_proceeds_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
+cancelled_customers_dataframe = pd.DataFrame(index=df[''], columns=salesforce.columns[8:])
 
 #create an error array to look up errors later
 error_array = []
@@ -16,7 +16,7 @@ for time_period in range(0,10):
         #any exception will be skipped, and the code will continue looping through
         try:
 
-            restaurant_id = int(df.iloc[row, df.columns.get_loc("CN Location ID")])
+            restaurant_id = int(df.iloc[row, df.columns.get_loc("")])
 
             # if there is no data in the given cell (ie. the restaurant is not old enough to have three months of data,
             # then skip this and just write null in dataframe
