@@ -76,14 +76,6 @@ for time_period in range(0,10):
 
                             cancelled_order_volume = cancel_results[1]
                             cancelled_unique_customers = cancel_results[2]
-
-                        print("-------------------------------------------------------------------------------------------\n")
-                        print("Month T-{0}".format(time_period))
-                        print("Restaurant ID: {0} | Restaurant Name: {1} | Start Month: {2} | End Month: {3} | Order Volume: {4} orders"
-                              "| Order Total: ${5} | Unique Customers: {6} customers".format(restaurant_id, restaurant_name, start_date, end_date, order_volume, order_total, unique_customers))
-                        print("Cancelled Orders: {0} | Cancelled Order Total: {1} | Cancelled Customers: {2}".format(cancelled_order_volume, cancelled_order_total, cancelled_unique_customers))
-                        print("-------------------------------------------------------------------------------------------\n")
-
                         cursor.close()
                         cls.connection.close()
                         return order_volume, order_total, pickup_volume, unique_customers, cancelled_order_total, cancelled_order_volume, cancelled_unique_customers
